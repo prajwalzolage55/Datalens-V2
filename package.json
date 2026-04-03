@@ -2,7 +2,7 @@
   "name": "datalens-ai",
   "version": "1.0.0",
   "private": true,
-  "homepage": ".",
+  "homepage": "https://adinath-jagtap.github.io/DataLens-AI-Intelligent-Data-Analytics-Agent/",
   "dependencies": {
     "date-fns": "^3.6.0",
     "firebase": "^10.8.0",
