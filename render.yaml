@@ -3,7 +3,7 @@ services:
     name: datalens-ai
     runtime: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn -w 1 --threads 4 run:app
+    startCommand: gunicorn -w 1 --threads 4 -b 0.0.0.0:$PORT run:app
     envVars:
       - key: FLASK_SECRET_KEY
         generateValue: true
