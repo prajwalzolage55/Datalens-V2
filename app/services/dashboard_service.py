@@ -823,7 +823,7 @@ def generate_pbix(rows: list, file_name: str, cols: dict) -> bytes:
     with zipfile.ZipFile(buf, "w", zipfile.ZIP_DEFLATED) as zf:
 
         # ── [Content_Types].xml ──────────────────────────────────────────
-        content_types = """<?xml version="1.0" encoding="utf-16" standalone="yes"?>
+        content_types = """<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">
   <Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/>
   <Default Extension="json" ContentType="application/json"/>
