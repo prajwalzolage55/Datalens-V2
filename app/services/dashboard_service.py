@@ -980,7 +980,9 @@ def generate_pbix(rows: list, file_name: str, cols: dict) -> bytes:
             "resourcePackages": [],
         }
 
-        zf.writestr("Report/Layout", json.dumps(layout, ensure_ascii=False))
+        layout_json = json.dumps(layout, ensure_ascii=False)
+        layout_bytes = b'\xff\xfe' + layout_json.encode("utf-16-le")
+        zf.writestr("Report/Layout", layout_bytes)
 
         # ── Report/_rels/Layout.rels ─────────────────────────────────────
         layout_rels = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
