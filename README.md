@@ -1,24 +1,24 @@
 <div align="center">
   
-# 📊 DataLens AI
+# 📊 DataLens AI (V2)
 
-### *Intelligent Data Analytics Agent*
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3.8%2B-blue?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
-  <img src="https://img.shields.io/badge/Jupyter-Notebook-orange?style=for-the-badge&logo=jupyter&logoColor=white" alt="Jupyter"/>
-  <img src="https://img.shields.io/badge/Google-Gemini%20AI-purple?style=for-the-badge&logo=google&logoColor=white" alt="Gemini"/>
-</p>
-
-**An autonomous AI-powered data analytics system that transforms raw datasets into professional meaningful visualizations and interactive dashboards**
+### *Intelligent Full-Stack Data Analytics Agent*
 
 <p align="center">
-  <a href="https://huggingface.co/spaces/adinathjagtap/ai-data-analysis-agent">🚀 Live Demo (V1)</a> •
-  <a href="https://datalens-ai-intelligent-data-analytics.onrender.com/">🚀 Live Demo (V2)</a> •
-  <a href="https://youtu.be/lJAdrE78hZ8">📺 Video Demo</a> •
+  <img src="https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
+  <img src="https://img.shields.io/badge/Flask-Web%20App-black?style=for-the-badge&logo=flask&logoColor=white" alt="Flask"/>
+  <img src="https://img.shields.io/badge/Groq-Llama%203.3-orange?style=for-the-badge&logo=groq&logoColor=white" alt="Groq"/>
+  <img src="https://img.shields.io/badge/Plotly-Interactive-indigo?style=for-the-badge&logo=plotly&logoColor=white" alt="Plotly"/>
+  <img src="https://img.shields.io/badge/MongoDB-Database-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB"/>
 </p>
 
-*Capstone Project for Google's 5-Day AI Agents Intensive Course*
+**An autonomous AI-powered web platform that transforms raw datasets into professional, interactive dashboards and actionable insights in under 30 seconds.**
+
+<p align="center">
+  <a href="https://datalens-v2-tu98.onrender.com/">🚀 Live Web App Demo</a> •
+  <a href="https://huggingface.co/spaces/adinathjagtap/ai-data-analysis-agent">🚀 V1 Notebook Demo</a> •
+  <a href="https://youtu.be/lJAdrE78hZ8">📺 Video Demo</a>
+</p>
 
 <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" alt="divider"/>
 
@@ -29,87 +29,66 @@
 - [🎯 Problem & Solution](#-problem--solution)
 - [🏗️ System Architecture](#️-system-architecture)
 - [✨ Core Capabilities](#-core-capabilities)
-- [🚀 Quick Start](#-quick-start)
-- [🎨 Features](#-features)
+- [🚀 Quick Start (Local Setup)](#-quick-start-local-setup)
+- [🎨 Interactive Features](#-interactive-features)
 - [🔧 Technical Stack](#-technical-stack)
-- [📊 Output Deliverables](#-output-deliverables)
-- [📈 Use Cases](#-use-cases)
-- [🛡️ Security](#️-security)
-- [📚 Project Structure](#-project-structure)
+- [📊 Use Cases](#-use-cases)
+- [🛡️ Security & Privacy](#️-security--privacy)
 
 <br>
 
 ## 🎯 Problem & Solution
 
 ### The Challenge
-
 Modern data analysis faces critical barriers:
+- **Complexity**: Multiple tools required for cleaning, analysis, and visualization.
+- **Technical Skills**: Demands expertise in Python, pandas, and visualization libraries.
+- **Time Investment**: Manual processes consume hours of productive time.
+- **Accessibility**: Non-technical users are often locked out of advanced analytics.
 
-- **Complexity**: Multiple tools required for cleaning, analysis, and visualization
-- **Technical Skills**: Demands expertise in Python, pandas, and visualization libraries
-- **Time Investment**: Manual processes consume hours of productive time
-- **Accessibility**: Non-technical users locked out of advanced analytics
-- **Inconsistency**: Variable quality based on individual expertise
-
-### Our Solution
-
-**DataLens AI** democratizes data analysis through AI automation:
+### Our Solution (V2 Update)
+DataLens AI V2 completely reimagines the workflow, moving beyond Jupyter Notebooks and delivering a **production-ready, interactive web application**. 
 
 ```
 Raw Data → AI Processing → Professional Insights
    ↓            ↓                    ↓
-Upload → Gemini Analysis → Interactive Dashboard
+Upload → Groq LLM Analysis → Interactive Plotly Dashboard
 ```
 
 **Key Benefits:**
-- 🤖 **AI-Driven**: Leverages Google's Gemini API for intelligent processing
-- ⚡ **Fast**: Hours of work reduced to minutes
-- 🎯 **Complete**: End-to-end pipeline in a single notebook
-- 🚀 **No-Code**: Upload and process without manual coding
-- 📊 **Professional**: Publication-quality visualizations
+- 🤖 **AI-Driven**: Leverages Groq (Llama-3.3-70b) for blazing fast, intelligent data parsing.
+- ⚡ **Instant Execution**: From CSV upload to a full interactive dashboard in seconds.
+- 🚀 **Zero-Code Interface**: Purely graphical and conversational interface.
+- 📊 **Dynamic Dashboards**: Fluid, cross-filtering Plotly charts with a premium UI.
 
 <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png" alt="divider"/>
 
 ## 🏗️ System Architecture
 
-### Pipeline Workflow
+DataLens AI V2 operates on a highly responsive, multi-tier architecture designed for speed and reliability.
 
 ```mermaid
-graph LR
-    A[🔧 Setup Environment] --> B[🤖 Initialize Gemini AI]
-    B --> C[📁 Load Data]
-    C --> D[🧠 AI Analysis & Cleaning]
-    D --> E[📊 Generate Visualizations]
-    E --> F[📈 Interactive Dashboard]
+graph TD
+    A[Client Browser] -->|Upload CSV/Excel| B(Flask Web Server)
+    B -->|Parse & Clean| C{Pandas Data Engine}
+    C -->|Generate Profiling| D[YData Profile Report]
+    C -->|Data Sample| E[Groq AI API / Gemini]
+    E -->|JSON Insights & Code| B
+    B -->|Save Session| F[(MongoDB)]
+    B -->|Render Dashboard| A
     
-    style A fill:#e3f2fd,stroke:#1976d2,stroke-width:3px,color:#000000
-    style B fill:#f3e5f5,stroke:#7b1fa2,stroke-width:3px,color:#000000
-    style C fill:#fff3e0,stroke:#f57c00,stroke-width:3px,color:#000000
-    style D fill:#e8f5e9,stroke:#388e3c,stroke-width:3px,color:#000000
-    style E fill:#fce4ec,stroke:#c2185b,stroke-width:3px,color:#000000
-    style F fill:#e0f2f1,stroke:#00796b,stroke-width:3px,color:#000000
-```
+    A -->|Natural Language Chat| B
+    B -->|Prompt Data| E
+    E -->|Generated Python Code| G[Sandboxed Code Executor]
+    G -->|Execution Result| B
+    B -->|Chat Response| A
 
-### Component Architecture
-
-```
-┌─────────────────┐    ┌──────────────────┐    ┌──────────────────┐
-│   Data Input    │    │  AI Processing   │    │ Output Generation│
-│                 │    │                  │    │                  │
-│ • CSV/Excel     │───▶│ • Gemini AI     │───▶│ • Visualizations │
-│ • Raw Data      │    │ • Analysis       │    │ • Dashboard      │
-│ • File Upload   │    │ • Code Generation│    │ • Reports        │
-└─────────────────┘    └──────────────────┘    └──────────────────┘
-         │                        │                        │
-         └────────────────────────┼────────────────────────┘
-                                  │
-                         ┌──────────────────┐
-                         │ Data Processing  │
-                         │                  │
-                         │ • Cleaning       │
-                         │ • Transformation │
-                         │ • Encoding       │
-                         └──────────────────┘
+    style A fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
+    style B fill:#fff3e0,stroke:#f57c00,stroke-width:2px,color:#000
+    style C fill:#e8f5e9,stroke:#388e3c,stroke-width:2px,color:#000
+    style E fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#000
+    style F fill:#e0f2f1,stroke:#00796b,stroke-width:2px,color:#000
+    style G fill:#ffebee,stroke:#d32f2f,stroke-width:2px,color:#000
 ```
 
 <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/grass.png" alt="divider"/>
@@ -119,225 +98,116 @@ graph LR
 <table>
 <tr>
 <td width="33%" align="center">
-<h3>🤖 AI-Driven Intelligence</h3>
-<p>Gemini API for automated quality assessment and insights generation</p>
+<h3>📊 Interactive Dashboards</h3>
+<p>8 dynamically generated Plotly.js charts that adapt to your specific dataset columns automatically. Hover, zoom, and pan directly in the browser.</p>
 </td>
 <td width="33%" align="center">
-<h3>🧹 Smart Data Cleaning</h3>
-<p>Intelligent cleaning code generation based on data profiling</p>
+<h3>💬 Chat with your Data</h3>
+<p>Ask plain English questions. The AI generates and executes Pandas code in the background to answer you instantly.</p>
 </td>
 <td width="33%" align="center">
-<h3>📊 Advanced Visualizations</h3>
-<p>10+ chart types with professional styling and interactivity</p>
+<h3>🔗 Secure Sharing</h3>
+<p>Generate password-protected, read-only links to share your interactive dashboards and insights with stakeholders.</p>
 </td>
 </tr>
 <tr>
 <td width="33%" align="center">
-<h3>📈 Interactive Dashboard</h3>
-<p>Real-time filters, KPI cards, and auto-updating charts</p>
+<h3>📈 YData Profiling</h3>
+<p>Generate deep, extensive statistical profiles covering missing values, correlations, and distribution curves.</p>
 </td>
 <td width="33%" align="center">
-<h3>🏭 Production-Ready</h3>
-<p>ML-ready datasets with encoding and standardization</p>
+<h3>🤖 AI Quality Scoring</h3>
+<p>Automatic dataset scoring (0-100) with detailed anomaly detection, skewness warnings, and cleaning recommendations.</p>
 </td>
 <td width="33%" align="center">
-<h3>📁 Seamless Upload</h3>
-<p>Interactive widget supporting CSV and Excel formats</p>
+<h3>📁 Multi-Format Export</h3>
+<p>Export your cleaned data and results to CSV, JSON, Excel, Parquet, or download a beautifully formatted PDF report.</p>
 </td>
 </tr>
 </table>
 
 <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/solar.png" alt="divider"/>
 
-## 🚀 Quick Start
+## 🎨 Interactive Features
 
-### Prerequisites
-
-| Requirement | Version | Status |
-|:------------|:-------:|:------:|
-| **Python** | 3.8+ | ✅ Required |
-| **Google Colab** | - | 🌟 Recommended |
-| **Gemini API Key** | - | 🔑 Required |
-
-### Installation
-
-```bash
-pip install pandas numpy matplotlib seaborn plotly scikit-learn ipywidgets \
-            jsonschema google-generativeai google-auth google-auth-oauthlib \
-            openpyxl xlrd jupyterlab
-```
-
-### Setup Steps
-
-**1. Access the Notebook**
-```bash
-# Open in Google Colab
-File → Upload → Select the .ipynb notebook
-```
-
-**2. Configure API Key**
-```python
-# Add Gemini API key to Colab Secrets
-# 1. Click 🔑 in left sidebar
-# 2. Add new secret: GEMINI_API_KEY = "your_api_key"
-```
-
-**3. Run the Pipeline**
-```python
-# Execute cells sequentially:
-# Cells 1-2:  Environment setup
-# Cells 3-4:  AI initialization  
-# Cell 5:     Data upload
-# Cells 6-9:  AI cleaning
-# Cells 10-14: Visualizations
-# Cells 15-17: Dashboard
-# Cells 18-19: Reports
-```
-
-### Usage Example
+Click the dropdowns below to explore how DataLens AI automates the data analysis lifecycle:
 
 <details>
-<summary><b>🔧 Initialize Environment</b></summary>
-
-```python
-# Cell 1: Install dependencies
-!pip install pandas numpy matplotlib seaborn plotly scikit-learn ipywidgets \
-            jsonschema google-generativeai --quiet
-```
-*⏱️ ~2 minutes*
+<summary><b>1️⃣ Smart Data Upload & Parsing</b></summary>
+<br>
+Drop any CSV or Excel file up to 50MB. The system automatically detects delimiters, encodings, and data types. It seamlessly handles missing values and prepares the data for AI ingestion without any manual prep work.
 </details>
 
 <details>
-<summary><b>🤖 Initialize Gemini AI</b></summary>
-
-```python
-# Cell 3-4: Configure API
-from google.colab import userdata
-import google.genai as genai
-
-api_key = userdata.get("GEMINI_API_KEY")
-client = genai.Client(api_key=api_key)
-```
-*⏱️ ~30 seconds*
+<summary><b>2️⃣ Automated Visualization Engine</b></summary>
+<br>
+Instead of manually building charts, the system auto-detects column roles (e.g., identifying "Revenue" as sales and "Date" as time). It instantly renders:
+<ul>
+  <li><b>Sales over Time:</b> Line charts tracking performance.</li>
+  <li><b>Categorical Breakdown:</b> Bar charts and Pie charts for regional or product data.</li>
+  <li><b>Correlations:</b> Scatter plots mapping quantitative relationships.</li>
+  <li><b>Top N Rankings:</b> Animated ranking visuals.</li>
+</ul>
 </details>
 
 <details>
-<summary><b>📁 Load Dataset</b></summary>
-
-```python
-# Cell 5: Upload and analyze
-df = upload_dataset()
-dataset_summary = generate_dataset_summary(df)
-```
-*⏱️ Variable (depends on file size)*
+<summary><b>3️⃣ Chat & Code Execution</b></summary>
+<br>
+Type a question like <i>"What was the highest grossing product in Q3?"</i>. The Groq LLM translates this into Python/Pandas code, safely executes it against your dataset, and returns the exact numerical answer or a formatted table.
 </details>
 
 <details>
-<summary><b>🧹 AI-Powered Cleaning</b></summary>
-
-```python
-# Cell 6-7: Automated cleaning
-cleaning_prompt = build_cleaning_prompt(dataset_summary)
-cleaning_output = ask_gemini_cleaning(cleaning_prompt)
-```
-*⏱️ ~1 minute*
-</details>
-
-<details>
-<summary><b>📊 Generate Visualizations</b></summary>
-
-```python
-# Cell 10-14: Create charts
-viz_code = prompt_gemini(viz_prompt)
-exec(viz_code)
-
-# Cell 15-17: Build dashboard
-dashboard_code = prompt_gemini(dash_prompt)
-exec(dashboard_code)
-```
-*⏱️ ~2 minutes*
+<summary><b>4️⃣ Data Quality & Profiling</b></summary>
+<br>
+A dedicated profiling engine runs YData-Profiling to generate a standalone HTML report. It highlights high cardinality, severe skewness, exact missing row counts, and Spearman/Pearson correlation matrices.
 </details>
 
 <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/fire.png" alt="divider"/>
 
-## 🎨 Features
+## 🚀 Quick Start (Local Setup)
 
-### 🔍 Automated Data Analysis
+Want to run DataLens V2 on your own machine? Follow these steps:
 
-- **Comprehensive Summary**: Statistical metrics, missing values, data type profiling
-- **AI Quality Assessment**: Gemini-powered evaluation
-- **Column-wise Analysis**: Detailed numeric and categorical insights
+### Prerequisites
+| Requirement | Version | Status |
+|:------------|:-------:|:------:|
+| **Python** | 3.10+ | ✅ Required |
+| **MongoDB** | Local or Atlas | ✅ Required |
+| **Groq API Key** | - | 🔑 Required |
 
-### 🧹 Smart Data Cleaning
+### Installation Steps
 
-| Feature | Description | Status |
-|:--------|:------------|:------:|
-| **Missing Value Detection** | Automatic identification and handling | ✅ |
-| **Outlier Management** | 99th percentile statistical capping | ✅ |
-| **Data Normalization** | Column standardization and value scaling | ✅ |
-| **Categorical Encoding** | One-hot encoding for ML readiness | ✅ |
-| **Negative Value Handling** | Automatic conversion to absolute values | ✅ |
+**1. Clone the Repository**
+```bash
+git clone https://github.com/Adinath-Jagtap/DataLens-AI-Intelligent-Data-Analytics-Agent.git
+cd DataLens-AI-Intelligent-Data-Analytics-Agent
+```
 
-### 📊 Visualization Suite
+**2. Set up a Virtual Environment**
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: .\venv\Scripts\activate
+```
 
-<table>
-<tr>
-<td align="center" width="33%">
-<h4>📊 Chart Types</h4>
-<p>
-• Histograms<br>
-• Bar charts<br>
-• Line charts<br>
-• Scatter plots<br>
-• Box plots<br>
-• Heatmaps<br>
-• Pie charts<br>
-• Correlation matrices<br>
-• Violin plots<br>
-• Area charts
-</p>
-</td>
-<td align="center" width="33%">
-<h4>🎛️ Interactive Features</h4>
-<p>
-• Real-time filtering<br>
-• KPI cards<br>
-• Multi-select widgets<br>
-• Auto-updating charts<br>
-• Dynamic interactions<br>
-• Responsive design
-</p>
-</td>
-<td align="center" width="34%">
-<h4>✨ Professional Quality</h4>
-<p>
-• Custom styling<br>
-• Proper titles<br>
-• Axis labels<br>
-• Legends<br>
-• Color schemes<br>
-• Export-ready
-</p>
-</td>
-</tr>
-</table>
+**3. Install Dependencies**
+```bash
+pip install -r requirements.txt
+```
 
-### 🤖 AI Integration
+**4. Configure Environment Variables**
+Create a `.env` file in the root directory:
+```env
+FLASK_SECRET_KEY=your_secure_secret_key_here
+MONGO_URI=mongodb://localhost:27017/
+GROQ_API_KEY=your_groq_api_key_here
+# Optional: GEMINI_API_KEY=your_gemini_key
+```
 
-<table>
-<tr>
-<td align="center" width="50%">
-<h4>🧠 Gemini 2.5 Pro</h4>
-<p>Advanced data analysis and cleaning recommendations</p>
-<p>🔴 <em>Thorough & Comprehensive</em></p>
-</td>
-<td align="center" width="50%">
-<h4>⚡ Gemini 2.5 Flash</h4>
-<p>Fast visualization code generation</p>
-<p>🟢 <em>Quick & Efficient</em></p>
-</td>
-</tr>
-</table>
+**5. Run the Server**
+```bash
+python run.py
+```
+*Open your browser and navigate to `http://127.0.0.1:5000`*
 
 <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/vintage.png" alt="divider"/>
 
@@ -349,22 +219,19 @@ exec(dashboard_code)
 <tr>
 <td width="50%" valign="top">
 
+#### 🌐 Backend & Server
+```python
+Flask       # Web framework
+PyMongo     # Database driver
+Bcrypt      # Password hashing
+Flask-Login # Auth management
+```
+
 #### 📊 Data Processing
 ```python
 pandas      # Data manipulation
 numpy       # Numerical operations
-```
-
-#### 📈 Visualization
-```python
-matplotlib  # Static plots
-seaborn     # Statistical graphics
-plotly      # Interactive charts
-```
-
-#### 🤖 Machine Learning
-```python
-scikit-learn  # Preprocessing & encoding
+ydata-profiling # Statistical reports
 ```
 
 </td>
@@ -372,106 +239,16 @@ scikit-learn  # Preprocessing & encoding
 
 #### 🧠 AI Integration
 ```python
-google-generativeai  # Gemini API
+groq        # Llama-3.3 LLM Inference
+google-generativeai # Gemini API fallback
 ```
 
-#### 🎛️ Interactive Components
-```python
-ipywidgets  # Dashboard widgets
+#### 📈 Frontend & Visuals
+```html
+Plotly.js   # Interactive charts
+Vanilla CSS # Responsive custom styling
+Jinja2      # Server-side rendering
 ```
-
-#### ✅ Validation
-```python
-jsonschema  # Data validation
-```
-
-</td>
-</tr>
-</table>
-
-### Notebook Structure
-
-```
-📓 Cells 1-2:   Environment Setup (Dependencies)
-🤖 Cells 3-4:   AI Initialization (Gemini Config)
-📁 Cell 5:      Data Loading (Upload & Profile)
-🧹 Cells 6-9:   AI Cleaning (Quality Improvement)
-📊 Cells 10-14: Visualization (Chart Generation)
-📈 Cells 15-17: Dashboard (Interactive Interface)
-📋 Cells 18-19: Reporting (Insights & Recommendations)
-```
-
-<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png" alt="divider"/>
-
-## 📊 Output Deliverables
-
-<div align="center">
-
-<table>
-<tr>
-<td align="center" width="25%">
-<h3>1️⃣</h3>
-<h4>Cleaned Dataset</h4>
-<p><em>ML-ready with encoding and standardization</em></p>
-</td>
-<td align="center" width="25%">
-<h3>2️⃣</h3>
-<h4>Visualizations</h4>
-<p><em>10+ professional charts</em></p>
-</td>
-<td align="center" width="25%">
-<h3>3️⃣</h3>
-<h4>Interactive Dashboard</h4>
-<p><em>Real-time analytics with KPIs</em></p>
-</td>
-<td align="center" width="25%">
-<h3>4️⃣</h3>
-<h4>Analysis Report</h4>
-<p><em>Automated insights & recommendations</em></p>
-</td>
-</tr>
-</table>
-
-</div>
-
-<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/water.png" alt="divider"/>
-
-## 📈 Use Cases
-
-<table>
-<tr>
-<td width="50%" valign="top">
-
-### 💼 Business Intelligence
-- Sales analysis & forecasting
-- Performance tracking
-- KPI monitoring & dashboards
-- Revenue analysis
-- Market trend identification
-
-### 🔬 Data Science
-- Automated ETL pipelines
-- Feature engineering
-- Model preparation
-- Data preprocessing
-- Exploratory data analysis
-
-</td>
-<td width="50%" valign="top">
-
-### 📊 Research Analytics
-- Statistical analysis
-- Correlation studies
-- Pattern recognition
-- Hypothesis testing
-- Trend analysis
-
-### 📋 Reporting Automation
-- Automated report generation
-- Executive dashboards
-- Periodic reporting
-- Stakeholder presentations
-- Business intelligence insights
 
 </td>
 </tr>
@@ -479,74 +256,66 @@ jsonschema  # Data validation
 
 <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/dark.png" alt="divider"/>
 
-## 🛡️ Security
+## 📊 Use Cases
 
-```
-╔═══════════════════════════════════════════════════════════╗
-║               SECURITY & PRIVACY MEASURES                 ║
-╠═══════════════════════════════════════════════════════════╣
-║  ✅  Secure API Handling                                  ║
-║      → API keys stored in Colab secrets                   ║
-║                                                           ║
-║  ✅  No Hardcoded Credentials                             ║
-║      → Secure authentication practices                    ║
-║                                                           ║
-║  ✅  Data Privacy                                         ║
-║      → Local processing without external transmission     ║
-╚═══════════════════════════════════════════════════════════╝
-```
-
-<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/grass.png" alt="divider"/>
-
-## 📚 Project Structure
-
-```
-DataLens-AI-Intelligent-Data-Analytics-Agent/
-│
-└── 📊 DataLens AI - Intelligent Data Analytics Agent.ipynb
-    (Version 2 - Optimized for Google Colab)
-```
-
-### 🚀 Deployment
-
-<table align="center">
+<table>
 <tr>
-<td align="center" width="50%">
+<td width="50%" valign="top">
 
-**🌐 Version 1 - Live Demo**
+### 💼 Business Intelligence
+- Sales analysis & revenue forecasting
+- Performance tracking & KPI monitoring
+- Market trend identification
+- Quick ad-hoc reporting for executives
 
-[![Live Demo](https://img.shields.io/badge/Try-Live_Demo-orange?style=for-the-badge&logo=huggingface)](https://huggingface.co/spaces/adinathjagtap/ai-data-analysis-agent)
-
-Deployed on Hugging Face Spaces
+### 🔬 Data Science
+- Automated Exploratory Data Analysis (EDA)
+- Feature engineering preparation
+- Instant data quality assessment
+- Missing value analysis
 
 </td>
-<td align="center" width="50%">
+<td width="50%" valign="top">
 
-**📦 Version 2 - Current**
+### 📊 Research Analytics
+- Rapid statistical profiling
+- Correlation and skewness studies
+- Pattern recognition across variables
+- Dataset sanitization
 
-![Status](https://img.shields.io/badge/Status-Available-success?style=for-the-badge)
-
-Available in this Repository
+### 📋 Operations & HR
+- Employee survey result analysis
+- Inventory tracking & anomalies
+- Marketing campaign metrics
+- Customer segmentation insights
 
 </td>
 </tr>
 </table>
 
-### 🚨 Important Notes
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/water.png" alt="divider"/>
+
+## 🛡️ Security & Privacy
 
 ```
-⚠️  REQUIREMENTS
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-✓ Google Colab environment recommended
-✓ Gemini API key configured in Colab secrets
-✓ Supports CSV and Excel file formats
-✓ Automatic dependency installation
+╔═══════════════════════════════════════════════════════════╗
+║               SECURITY & PRIVACY MEASURES                 ║
+╠═══════════════════════════════════════════════════════════╣
+║  ✅  Ephemeral Data Processing                            ║
+║      → Uploaded datasets are parsed in memory and do not  ║
+║        persist on the disk.                               ║
+║                                                           ║
+║  ✅  Password Protected Sharing                           ║
+║      → Public dashboard links can be locked with custom   ║
+║        passwords to prevent unauthorized access.          ║
+║                                                           ║
+║  ✅  Secure Authentication                                ║
+║      → All user credentials are hashed using standard     ║
+║        bcrypt algorithms.                                 ║
+╚═══════════════════════════════════════════════════════════╝
 ```
 
-<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png" alt="divider"/>
-
-<br>
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/grass.png" alt="divider"/>
 
 <div align="center">
 
@@ -560,15 +329,15 @@ Available in this Repository
   <a href="https://youtu.be/lJAdrE78hZ8">
     <img src="https://img.shields.io/badge/📺_Watch-Video_Demo-red?style=for-the-badge&logo=youtube" alt="Video Demo"/>
   </a>
-  <a href="https://huggingface.co/spaces/adinathjagtap/ai-data-analysis-agent">
-    <img src="https://img.shields.io/badge/🚀_Try-Live_Demo-orange?style=for-the-badge&logo=huggingface" alt="Live Demo"/>
+  <a href="https://datalens-v2-tu98.onrender.com/">
+    <img src="https://img.shields.io/badge/🚀_Try-Live_App-orange?style=for-the-badge&logo=huggingface" alt="Live Demo"/>
   </a>
 </p>
 
 ### Built Using
 
 <p>
-  <img src="https://img.shields.io/badge/Built%20with-Google%20Gemini%20AI-purple?style=for-the-badge&logo=google&logoColor=white" alt="Gemini"/>
+  <img src="https://img.shields.io/badge/Built%20with-Groq%20AI-purple?style=for-the-badge&logo=groq&logoColor=white" alt="Groq"/>
   <img src="https://img.shields.io/badge/Python-Data%20Science%20Stack-blue?style=for-the-badge&logo=python&logoColor=white" alt="Python Stack"/>
 </p>
 
