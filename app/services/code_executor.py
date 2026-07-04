@@ -31,8 +31,8 @@ def build_dataframe(cleaned_rows: list) -> pd.DataFrame:
     # Try to convert columns to appropriate numeric types
     for col in df.columns:
         try:
-            df[col] = pd.to_numeric(df[col])
-        except (ValueError, TypeError):
+            df[col] = pd.to_numeric(df[col], errors="ignore")
+        except Exception:
             pass
     return df
 
